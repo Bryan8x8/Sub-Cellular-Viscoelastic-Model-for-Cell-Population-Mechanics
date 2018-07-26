@@ -1,0 +1,30 @@
+PROJECT LOG:
+
+7/25/2018
+
+	Tasks:
+			- plan model functionality
+			- determine how graphics will be displayed
+			- determine how model functionality will translate to graphical display
+
+	Notes/Challenges:
+		
+			Dr. Morgan suggested the use of primitive graphic objects in order to create cell representations. After initial testing I've decided to go ahead an build the cell graphics using the primitives. One of the key issues is figuring out how to dynamically assign each graphical component in memory so they can be individually accessed for later adjustments.
+
+					- One possible solution to this may be creating a cell array. A single cell in this array would represent the graphic of an entire cell. Each cell contains a second array within itself. This second array contains each individual graphic compenent that is used to create the whole. 
+
+			Another challenge is how can I go about most efficiently storing and recording the values that define each cell, such as length, radius, position, etc.
+
+				- This problem is similar to the earlier grpahics issue. I beleive I can take the same approach and create a cell array that within each cell contains a 	secondary array that hold all the necessary cell information. 
+
+			This solution makes functionality and graphics communication simple. Each cell representing a cell in the functionality array will be tied to it's graphical representation cell in the graphical array, thus solving the translation issue.
+
+			Note, it might seem counter productive to split cell data and cell graphical data into two different cell arrays. I decided to stick to this decision due to the fact that keeping them seperate allows the secondary matrices to be of a single type making the data easier to store and retrieve and inhances readability.
+
+	Progress:
+
+			- familiarized myself with primitives and have succesfully ran a few tests on app designer. I am confident that this appraoch will be the best method by with to represent the model
+
+			- begun building a simple cell model 
+
+			 
