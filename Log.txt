@@ -15,7 +15,7 @@ PROJECT LOG:
 
 			Another challenge is how can I go about most efficiently storing and recording the values that define each cell, such as length, radius, position, etc.
 
-				- This problem is similar to the earlier grpahics issue. I beleive I can take the same approach and create a cell array that within each cell contains a 	secondary array that hold all the necessary cell information. 
+				- This problem is similar to the earlier grpahics issue. I beleive I can take the same approach and create a cell array that within each cell contains a secondary array that hold all the necessary cell information. 
 
 			This solution makes functionality and graphics communication simple. Each cell representing a cell in the functionality array will be tied to it's graphical representation cell in the graphical array, thus solving the translation issue.
 
@@ -27,4 +27,24 @@ PROJECT LOG:
 
 			- begun building a simple cell model 
 
+
+7/27/2018
+
+	Tasks:
+
+			- Make Progress on Simple Cell Model
+
+	Notes/Challenges:
+
+			I have decided to take a different appraoch in representing a cell. I will instead design a cell class that will contain all the underlying data and graphical information, individual cells will be part of a greater matrix and the characterestics of each cell can be accessed through the object. 
+
+			Building on that previous idea from today I think I will take it a step farther by creating a point classes, each point will describe either a nucleus or membrane point and have "links" to the other points which they are connected to, this way it will be easy to track which point is connected to what and their relationship to one another. This way changes to one point can easily initiate a chain reaction within the cell and neighboring cells and alter all required values acting as an interconnected network.
+
+			A cell class will noo longer contain the data within it's structure, instead simply point to the membrance and nucleaus points that it is made up of, this will make it simpler to implement mitosis as instead we simple rearrage pointers rather than alter data.
+
+	Progress:
+
+			- begun building the functions that will produce the data that will be stored in the cell object.
+			- created MemPoint and NucPoint classes which will represent Membrance and Nucleus points respectively.
+			- created cell class which will point to its respective membrance and nucleus points.
 			 
