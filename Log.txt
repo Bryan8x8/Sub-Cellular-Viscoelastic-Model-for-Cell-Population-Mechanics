@@ -38,9 +38,9 @@ PROJECT LOG:
 
 			I have decided to take a different appraoch in representing a cell. I will instead design a cell class that will contain all the underlying data and graphical information, individual cells will be part of a greater matrix and the characterestics of each cell can be accessed through the object. 
 
-			Building on that previous idea from today I think I will take it a step farther by creating a point classes, each point will describe either a nucleus or membrane point and have "links" to the other points which they are connected to, this way it will be easy to track which point is connected to what and their relationship to one another. This way changes to one point can easily initiate a chain reaction within the cell and neighboring cells and alter all required values acting as an interconnected network.
+			Building on that previous idea from today I think I will take it a step farther by creating point classes, each point will describe either a nucleus or membrane point and have "links" to the other points which they are connected to, this way it will be easy to track which point is connected to what and their relationship to one another. This way changes to one point can easily initiate a chain reaction within the cell and neighboring cells and alter all required values acting as an interconnected network.
 
-			A cell class will noo longer contain the data within it's structure, instead simply point to the membrance and nucleaus points that it is made up of, this will make it simpler to implement mitosis as instead we simple rearrage pointers rather than alter data.
+			A cell class will noo longer contain the data within it's structure, instead simply point to the membrane and nucleaus points that it is made up of, this will make it simpler to implement mitosis as instead we simple rearrage pointers rather than alter data.
 
 	Progress:
 
