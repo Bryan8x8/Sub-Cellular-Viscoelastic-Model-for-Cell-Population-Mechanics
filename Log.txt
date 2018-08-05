@@ -48,3 +48,38 @@ PROJECT LOG:
 			- created MemPoint and NucPoint classes which will represent Membrance and Nucleus points respectively.
 			- created cell class which will point to its respective membrance and nucleus points.
 			 
+
+7/30/2018
+
+	Tasks
+
+		- Continue work on Simple Cell Model
+
+		Notes/Challenges:
+
+			I am using cell array within the cell class to contain the children membrane and nucleus nodes. This can be swapped out for a dedicated cell array object in a later time.
+
+			I'm struggling with how I want to properly have memberane cells interact and keep track on what other cell membrances are nearest to them in the most efficient manner possible. I have yet to come up with any solutions that are satisfactory....I have a feeling this might be the biggest challenge of the model.
+
+			In the meantime I will finish up the simlpe cell model and create a rendering function to test if it is working properly from there I can begin adding more parameters and functionality.
+
+	Progress:
+
+		- The Simple Cell Model is complete
+
+7/31/2018
+
+	Tasks
+
+		- Working on Cell Growth and mitosis today.
+
+		Notes/Challenges:
+
+
+			Grow function works properly in an ideal cell situation but I am still unsure as to how I want to place the nodes in an unideal situation. The model as it is assumes that the new membrane node will be placed along the radius of the cell assuming no other external forces have warped the size of the cell. Obviously this can cause errors down the line as it would result in membranes being created within adjacent cells.
+
+			a potantial solution is placeing if within the middle of the shortest distance between the two nodes in which the new node will be placed. I'll implement this change once the mitosis function is completed and have a properly functioning "ideal" cell.
+
+
+	Progress:
+		- Growth functionality in cells complete
