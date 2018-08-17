@@ -65,7 +65,7 @@ PROJECT LOG:
 
 	Progress:
 
-		- The Simple Cell Model is complete
+		- The Simple Cell Model is complete.
 
 7/31/2018
 
@@ -82,4 +82,64 @@ PROJECT LOG:
 
 
 	Progress:
-		- Growth functionality in cells complete
+
+		- Growth functionality in cells complete.
+
+
+8/5/2018
+
+	Tasks
+
+		- Start Mitosis Process.
+		- Implement force detection on individual nodes.
+		- Noticed a node connection issue on grow, this needs to be fixed.
+
+	Notes/Challeneges: 
+
+	Progress:
+
+		- consolidated functionality into the cell class
+
+
+8/8/2018
+
+	Tasks
+
+		- Implement Mitosis
+		- Implemented force dectection
+		- consolidate more functionality
+
+	Notes/Challenges
+
+		It seems according to the article that so long as there is no force on a cell significant enough to reduce it's maximum volume then it may be capable of growing, if a cell grows to twice it's original size then it can be split due to mitosis. 
+
+		Therefore it is important to note that growth will only occur during "ideal" cell conditions (cell is a perfect circle)
+		
+	Progess:
+	
+		- growth functionality issues have been fixed 
+
+8/13/2018
+
+	Tasks
+
+		- rework growth
+
+	Notes/Challenges
+
+		growth has proven a lot more difficult that previously thought. we cannot make the assumption that growth will only occur when a cell is a perfect circle, there are many other shapes which a cell can take which will still allow for growth, I'm trying to figure out how to make growth work properly in a non ideal situattion.
+
+		assumption, even in an ideal situation the averaging of the voigt forces on a new point should place it in the proper location.
+
+		where will the new point be initially placed? midpoint along the membrane between the selected points.
+
+		Another emormous issue is the order at which force is calculated. In the real world a single application of force would effect multiple areas of a system simulaneously. With a computer we are limited to only calculating one effect at a time. How best to split this?
+
+		Important note, the mass of each node is 1/N * mass of nuc/cell. So when calculating viogt forces we must remember F = ma, now that we are given a mass we can calculate the rate at which a specific node is accelerating.
+		
+
+
+	Progress:
+
+		- all default values have been added to cell
+		- 
