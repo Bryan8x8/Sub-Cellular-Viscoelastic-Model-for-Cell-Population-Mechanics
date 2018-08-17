@@ -136,10 +136,45 @@ PROJECT LOG:
 		Another emormous issue is the order at which force is calculated. In the real world a single application of force would effect multiple areas of a system simulaneously. With a computer we are limited to only calculating one effect at a time. How best to split this?
 
 		Important note, the mass of each node is 1/N * mass of nuc/cell. So when calculating viogt forces we must remember F = ma, now that we are given a mass we can calculate the rate at which a specific node is accelerating.
+
+		A sum of forces regardless of the order they are summed up always end in the same final result. Remember! calculate all forces first before applying them. Applying individual forces before all acting forces are found could alter the state of the cell.
+
+		So all forces of all cells must be calculated before we can determine how the nodes behave
+
+		- nodes must now have velocities included, or we can split the velocity into a directional unit vector and speed.
+
+			- After some research turns out this is a route inspection problem, this will have a significant effect in increaing computation time
+
+			- No route inspection, I'll make my own traversal algorithm.
 		
 
 
 	Progress:
 
-		- all default values have been added to cell
-		- 
+		- added default values to cell
+		- growth has been sligtly re worked to include an increase in volume.
+		- edge traversal method has been selected, will implement tomorrow
+
+
+8/14/2018
+
+	Tasks
+
+		 - finalize force calculation and application system
+		 - implement new growth procedure based off new force system
+
+		
+
+8/16/2018
+
+	Tasks
+
+		- Finalize remining forces
+
+	Notes/Challeneges
+		
+		- Force from cytoplasm requires internal and environmental pressure, two values that are not given in paper. I have created a function that handles this force but have not yet determined for to calculate pressure value inputs 
+
+	Progress
+
+		- inner force calculator complete
