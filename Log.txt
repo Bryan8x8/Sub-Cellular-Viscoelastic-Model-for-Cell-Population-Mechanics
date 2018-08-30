@@ -178,3 +178,127 @@ PROJECT LOG:
 	Progress
 
 		- inner force calculator complete
+
+
+8/20/2018
+
+	Tasks
+
+		- Debug Force Calculator
+
+	Notes/Challenges
+
+		- It seems is if there it to much force being applied to the cell nucleus, driving it to collapse on itself. Speed calculations also seem to be off, nodes should not be travelling at 225mph...
+
+	Progress
+
+		- force calculations now seem to work perfectly! I forgot to take into account that absolute value used on two points is a scalar distance value rather than another point, once the voigt calculation was adjusted everything fell into place.
+
+8/21/2018
+
+	Tasks
+
+		- rework growth algorithm
+
+	Notes/Challeneges
+
+	Progress
+
+		- growth positions works perfectly, but the growth function does not work as predicted once exposed to forces, additional changes need to be implemented
+
+8/23/2018
+
+	Tasks
+
+		- Conitinue working on force application after growth
+		- Test cell death
+
+	Notes/Challenges
+
+		Force works perfectly in ideal cell situtation but still continues to act erradically after growth or when applying the conditions for cell death
+
+		- Ex. when spring lengths are shortened to simulate cell death, the nuclues size seems to explode while the membrane remains unchanged
+
+		I think there might be an issue with the velocity calculator as once a node seems to be pushed in a certain direction the magnitude at which it travels in that direction increases after every force recalculation, disregarding any new forces applied to itself.
+
+		I think it might also be worth taking another look at how mass is divided up along the cell and nucleus membrane. My initial assumptions may have been incorrect
+
+	Progress:
+
+		- Cell Death has been fixed. turned out velocity increases after new force applications were being accounted for twice, which led to nodes overpowering any forces after the initial push.
+
+
+8/25/2018
+
+	Tasks
+
+		- Fix growth/force
+
+	Notes/Challenges
+
+		Force from membrane to the nuleus is to small to keep the nucleus from expanding outside of its constraints. Also forces applied onto the nucleus cause greater displacement due to the lower mass of nucleus nodes and the opposite occurs for membrane nodes, they hardly budge.
+
+		To fix this I'm going to re evaluate my assumptions about the paper. So far I have been given two mass values, Cell Mass (1.0e-12 kg) and Nucleus Mass (1.0e-13 kg). Up until this point I have been assuming that each membrane node mass is equivalent to Cell_Mass*(1/N) and I have done the same with Nucleus Mass. 
+
+		Now what I will do is assume that Cell Mass is not just the membrane mass but the mass of the whole cell including the nucleus, therefore I will create a Membrane Mass that is equivalent to Cell Mass - Nucleus Mass, and then divide mass values from there. 
+
+		- Effects where minimal with the edits made to mass, problem must lie elsewhere
+
+		Progress:
+
+			Nothing significant, tested a few ideals. nothing yielded results
+
+
+8/26/2018
+
+	Tasks
+
+		- Fix growth/force
+
+	
+	Notes/Challenges
+
+		After some further inspection I noticed when I am trying to initiate cell death, the membrane node is not pulling the nucleus nodes back towards itself as they are supposed to. rather it's doing the opposite.
+
+		- There might be an error with cell population and initial positioning....this is strange because the rendering thus far seems perfect...
+
+	Progress:
+
+		Everything works...so long as time dilation is at .25, this won't allow the algorithm to run efficiently, for now I will continue on with the remaining functionality, and return to the time dilation issue at a later point
+
+
+8/26/2018
+
+	Tasks
+
+		- Finish Mitosis
+		- Implement new growth idea
+
+	Notes/Challenges
+
+		Implement distance between new growth nodes to be determined by average cyt length of neighboring nodes rather than placed right in between. This might dramatically change the way the cell grows!
+
+		Mitosis is currently being implemented
+
+		I still don't know how to fix the dt issue, but it can be held of until the model is properly functioning. 
+
+	Progress:
+
+		 - Cells are now capable of growing on their own and adding new nodes when volume is increased
+
+		 - New cyt length calculation in cell growth works excellently, cell behavior is much more predictable now!
+
+
+8/30/2018
+
+	Tasks
+
+		- Finish Mitosis
+
+	Notes/Challenges
+			
+		Again, the paper is vague in its descriptions and leaves out how mitosis forces acting on the cell is calculated and omits important variable numbers. I now need to determine how to best calculate the forces acting on a cell to simulate mitosis and at what point the seperation forces nodes to break from their neighbors and form their own independent cells.
+
+	Progress:
+
+		- Mitsosis Axis selection function complete
