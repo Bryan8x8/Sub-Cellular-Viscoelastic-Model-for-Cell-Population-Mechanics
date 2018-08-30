@@ -1,0 +1,25 @@
+function find_mitosis_axis(obj)
+    N = obj.NodeCount;
+    
+    if mod(N,2)
+        
+        axis = 1;
+        dist_one = calc_point_dist(obj.MembranePoints{1,1},obj.MembranePoints{((N/2) + 1), 1});
+        dist_two = calc_point_dist(obj.MembranePoints{N,1}, obj.MembranePoints{(N/2), 1});
+        lowest_dist = (dist_one + dist_two)/2; 
+        for i=2:(N/2)
+            dist_one = calc_point_dist(obj.MembranePoints{i,1},obj.MembranePoints{((N/2) + i + 1), 1});
+            dist_two = calc_point_dist(obj.MembranePoints{i-1,1}, obj.MembranePoints{(N/2) + i, 1});
+            test_dist = (dist_one + dist_two)/2; 
+            if test_dist 
+        end
+        
+    else 
+        
+        for i=2:floor(N/2)
+            
+        end
+        
+    end
+    
+end

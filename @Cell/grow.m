@@ -18,6 +18,7 @@ function grow(obj)
     
     %adding cell row   
     obj.addCellRow(randi([1,N],1));
+    
     obj.populatePoints();
     obj.setConnections();
 end

@@ -7,8 +7,10 @@ function addCellRow(obj,rowNum)
             NPoint = NucPoint(1,1);
             MPoint = MemPoint(1,1);
             addNucRow{1,1} = NPoint;
-            addMemRow{1,1} = MPoint;
-            
+            addMemRow{1,1} = MPoint;                        
+            %adding to the point lists
+            obj.NucleusPoints = [tempArrayNuc ; addNucRow];
+            obj.MembranePoints = [tempArrayMem ; addMemRow];
             %Setting MN and NN connections
             %{
             addNucRow{1,1}.MN = addMemRow{1,1};

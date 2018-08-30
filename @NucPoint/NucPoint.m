@@ -1,12 +1,14 @@
-classdef NucPoint
+classdef NucPoint < handle
    properties   
       Position; %x,y position
       mass;
       
       %velocity components;
-      unit_vector = 0;
-      speed = 0;
+      velocity = [0,0];
       force = [0,0];
+      
+      %Mitosis
+      axis_flag = 0;
       
       ParentCell;
       
@@ -31,7 +33,7 @@ classdef NucPoint
         end
       end
       
-      calc_inner(obj, K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, enviro_pressure)
+      calc_inner(obj, K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, enviro_pressure, N)
       
    end
 end

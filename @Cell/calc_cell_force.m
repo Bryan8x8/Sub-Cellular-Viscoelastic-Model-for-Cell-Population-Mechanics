@@ -29,19 +29,23 @@ function calc_cell_force(obj)
     
 
     for i=1:obj.NodeCount
-        m_point = obj.MembranePoints{i,1};
-        n_point = obj.NucleusPoints{i,1};
         
+        row = obj.rowNum;
         %CALCULATING INNER FORCE ACTING ON POINTS.
-        m_point.calc_inner(K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, external_pressure);
-        n_point.calc_inner(K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, external_pressure);
+        obj.MembranePoints{i,1}.calc_inner(K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, external_pressure, i,row);
+        obj.NucleusPoints{i,1}.calc_inner(K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, external_pressure, i);
         
         %CALCULATING CELL CELL FORCE ACTING ON POINTS.
         
+        
         %CALCULATING CELL ECM FORCE ACTING ON POINTS.
+        
         
         %CALCULATING EXTERNAL FORCE
         
+        
         %CALCULATING MITOSIS FORCE
+        
+        
     end
 end

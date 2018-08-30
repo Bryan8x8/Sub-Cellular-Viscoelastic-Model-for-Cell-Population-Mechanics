@@ -20,16 +20,22 @@ function setConnections(obj)
           obj.NucleusPoints{i,1}.NN_Two = obj.NucleusPoints{i+1,1};
           obj.MembranePoints{i,1}.MN_One = obj.MembranePoints{N,1};
           obj.MembranePoints{i,1}.MN_Two = obj.MembranePoints{i+1,1};
+          obj.NucleusPoints{i,1}.MN = obj.MembranePoints{i,1};
+          obj.MembranePoints{i,1}.NN = obj.NucleusPoints{i,1};
        elseif i == N
           obj.NucleusPoints{i,1}.NN_One = obj.NucleusPoints{N-1,1};
           obj.NucleusPoints{i,1}.NN_Two = obj.NucleusPoints{1,1};
           obj.MembranePoints{i,1}.MN_One = obj.MembranePoints{N-1,1};
-          obj.MembranePoints{i,1}.MN_Two = obj.MembranePoints{1,1};    
+          obj.MembranePoints{i,1}.MN_Two = obj.MembranePoints{1,1};  
+          obj.NucleusPoints{i,1}.MN = obj.MembranePoints{i,1};
+          obj.MembranePoints{i,1}.NN = obj.NucleusPoints{i,1};
        elseif i ~= 1 && i ~= N
           obj.NucleusPoints{i,1}.NN_One = obj.NucleusPoints{i-1,1};
           obj.NucleusPoints{i,1}.NN_Two = obj.NucleusPoints{i+1,1};
           obj.MembranePoints{i,1}.MN_One = obj.MembranePoints{i-1,1};
           obj.MembranePoints{i,1}.MN_Two = obj.MembranePoints{i+1,1};
+          obj.NucleusPoints{i,1}.MN = obj.MembranePoints{i,1};
+          obj.MembranePoints{i,1}.NN = obj.NucleusPoints{i,1};
        end
     end
 end 

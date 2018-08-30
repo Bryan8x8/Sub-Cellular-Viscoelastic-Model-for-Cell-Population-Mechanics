@@ -10,27 +10,42 @@ function apply_cell_force(obj, time_dilation)
        m_point = obj.MembranePoints{i,1};
        n_point = obj.NucleusPoints{i,1}; 
        
-
-       
        %we know F = ma
        %lets find the acceleration of each point 
-       m_point.force;
-       m_point.mass;
+       
        m_accel = m_point.force./m_point.mass;
        n_accel = n_point.force./n_point.mass;
        
-       m_initVel = m_point.speed * m_point.unit_vector;
-       n_initVel = n_point.speed * n_point.unit_vector;
+       m_initVel = m_point.velocity;
+       n_initVel = n_point.velocity;
        
        %s = vi*t + .5*a*t^2
        %remember we accel and vel are vector values 
-       m_dist = m_initVel*time_dilation + .5*m_accel*(time_dilation)^2; 
-       n_dist = n_initVel*time_dilation + .5*n_accel*(time_dilation)^2;
+       m_disp = m_initVel*time_dilation + .5*m_accel*(time_dilation^2); 
+       n_disp = n_initVel*time_dilation + .5*n_accel*(time_dilation^2);
        
        %dist values are displacement values that are added to the node
-       %positions
-       m_point.Position = m_point.Position + m_dist;
-       n_point.Position = n_point.Position + n_dist;
+       %positionse
+       %OPos = obj.MembranePoints{i,1}.Position;
+       %m_disp;
+       obj.MembranePoints{i,1}.Position = obj.MembranePoints{i,1}.Position + m_disp;
+       %APos = obj.MembranePoints{i,1}.Position;
+       obj.NucleusPoints{i,1}.Position = obj.NucleusPoints{i,1}.Position + n_disp;  
+       
+       %update node speed and unit vector
+       % t = (vf - vi)/a
+       %vf = vi + t*a
+       m_fVel = m_initVel + time_dilation*m_accel;
+       n_fVel = n_initVel + time_dilation*n_accel;
+       obj.MembranePoints{i,1}.velocity = m_fVel;
+       obj.NucleusPoints{i,1}.velocity = n_fVel;
+
+       
+       %we have ended the application of force, we will now reset the force
+       %on each node
+       
+       %obj.MembranePoints{i,1}.force = [0,0];
+       %obj.NucleusPoints{i,1}.force = [0,0];
        
     end
 
