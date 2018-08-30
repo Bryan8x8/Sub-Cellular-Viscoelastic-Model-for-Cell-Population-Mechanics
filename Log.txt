@@ -297,7 +297,7 @@ PROJECT LOG:
 
 	Notes/Challenges
 			
-		Again, the paper is vague in its descriptions and leaves out how mitosis forces acting on the cell is calculated and omits important variable numbers. I now need to determine how to best calculate the forces acting on a cell to simulate mitosis and at what point the seperation forces nodes to break from their neighbors and form their own independent cells.
+		Again, the paper is vague in its descriptions and leaves out how mitosis forces acting on the cell are calculated and omits important variable numbers. I now need to determine how to best calculate the forces acting on a cell to simulate mitosis and at what point the seperation forces nodes to break from their neighbors and form their own independent cells.
 
 	Progress:
 
