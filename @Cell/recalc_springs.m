@@ -16,3 +16,17 @@ function recalc_springs(obj, command)
     obj.nucOpp_l = mult*obj.nucOpp_l;
     
 end
+
+%{
+    This function is used either during cell growth or cell death to
+    recalculate the rest length of the springs within a cell.
+
+    Inputs:
+
+    obj: current working object
+
+    command: accepts two possible string values, "dec" will increase spring
+    rest length by a ratio of (N+1)/N, "inc" will increase the spring rest
+    length by a ratio of N/(N+1)
+
+%}

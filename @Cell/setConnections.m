@@ -39,3 +39,10 @@ function setConnections(obj)
        end
     end
 end 
+
+%{
+
+    This function serves to take all existing membrane and nucleus points in a
+    cell and connects them to their corresponding neighbors. 
+
+%}

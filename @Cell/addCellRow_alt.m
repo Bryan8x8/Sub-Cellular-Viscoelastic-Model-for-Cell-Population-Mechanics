@@ -36,7 +36,7 @@ function addCellRow_alt(obj,rowNum, mPoint, nPoint)
 end
 
 %{
-This is used exclusively for cell growth, therefore it sets the added nuc
-and mempoints to their proper MM and NN, it leaves the ONN to the grow
-function.
+This is used exclusively for cell growth, it adds a single Nucleus and
+Membrane point to their respective lists in a random position.
+setConnections should always follow immediately after this function.
 %}

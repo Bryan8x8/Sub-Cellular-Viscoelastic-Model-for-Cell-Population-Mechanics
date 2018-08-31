@@ -49,3 +49,23 @@ function calc_cell_force(obj)
         
     end
 end
+
+%{
+    This is a Cell function
+
+    Purpose of this function is to calculate and write all forces acting on the
+    children nodes of the Cell object calling this method. All forces
+    acting on nodes will be written into the respective node's 'force'
+    value.
+
+    Inputs:
+
+        obj: object that calls function
+
+    Outputs:
+
+        None.
+
+    
+
+%}

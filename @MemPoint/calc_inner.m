@@ -39,3 +39,46 @@ function calc_inner(obj, K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem,
        obj.force = (-1)*(voigt_valOne + voigt_valTwo + voigt_valThree + cyto_f_val);
        
 end
+
+%{
+    This is a MemPoint fuction.
+
+    Purpose is to calculate all inner forces acting on the node that is calling
+    this function and write them to the 'force' variable.
+
+    Inputs:
+
+        obj: object that calls function
+
+        K_cyst: Cytoskeleton spring constant
+ 
+        K_ncyt: Nucleus Cytoskeleton spring constant
+ 
+        K_mmem: Membrane adjacent spring constant
+
+        K_nmem: Nucleus adjacent neighbor spring constant
+ 
+        B_cyst: Cytoskeleton dampening constant
+ 
+        B_ncyt: Nucleus Cytoskeleton spring constant
+
+        B_mmem: Membrane adjacent neighbor dampening constat
+ 
+        B_nmem: Nucleus adjacent neighbor dampening constant
+ 
+        cellMem_l: Membrane adjacent neighbor spring rest length
+ 
+        nucMem_l: Nucleus adjacent neighbor spring rest length
+ 
+        cyt_l: Cytoskeleton spring rest length
+ 
+        nucOpp_l: Nucleus Cytoskeleton spring rest length
+ 
+        inner_pressure: pressure within cell
+ 
+        enviro_pressure: environmental pressure
+ 
+        N: Used for testing purposes, can be filled by any integer value.
+
+        
+%}

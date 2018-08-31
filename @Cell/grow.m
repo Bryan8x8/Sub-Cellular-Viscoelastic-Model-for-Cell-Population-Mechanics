@@ -22,3 +22,7 @@ function grow(obj)
     obj.populatePoints();
     obj.setConnections();
 end
+
+%{
+    NO LONGER IN USE, TO BE REPLAED WITH GROW_ALT
+%}

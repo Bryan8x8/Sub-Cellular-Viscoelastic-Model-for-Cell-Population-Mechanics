@@ -37,7 +37,7 @@ end
 
 %{
     This function serves to create all nucleus and membrane points, it
-    takes the Cells predetermined center position, node count, and radius lengths and
+    takes the Cells predetermined center position and radius lengths and
     then populates the MembranePoints and NucleusPoints lists in Cell with
     all of the necessary nodes at their correct positions
 %}

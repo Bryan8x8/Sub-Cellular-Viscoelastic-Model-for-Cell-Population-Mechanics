@@ -17,3 +17,18 @@ function recalc_radius(obj,command)
     obj.R_Mem = (mem_circumference)/(2*pi);
     obj.R_Nuc = (nuc_circumference)/(2*pi);
 end
+
+%{
+    This function exits to recalculate the "ideal" cell radius during growth
+    or cell death.
+
+    Inputs:
+
+    obj: current working object
+
+    command: accepts two possible string values, "dec" will increase radius
+    by a ratio of (N+1)/N, "inc" will increase the radius by a ratio of 
+    N/(N+1)
+   
+   
+%}

@@ -16,6 +16,9 @@ function find_mitosis_axis(obj)
         
     obj.Mitosis_Axis = axis;
         
-    
-    
 end
+
+%{
+    Determines between which set points the B and A mitosis groups should
+    be split
+%}

@@ -14,10 +14,27 @@ function [voigt_val, voigt_val_opp] = calc_voigt(point_One, point_Two, mu, k, l)
 end
 
 %{
-    this function serves to take a single cell as an input and calculate
-    the forces produced by it's children nodes.
+    This function takes two points, and calculated the force point_Two
+    exerts on point_One
 
-    this is being done using this method because models may use more than
-    one kind of cell therefore this function will be capable of taking any
-    cell, taking it's underlying data and appropriately calculate forces
+    Inputs: 
+
+        point_One: either a Mem or Nuc point
+
+        point_Two: either a Mem or Nuc point
+
+        mu: dampening constant
+    
+        k: spring constant
+
+        l: spring rest length
+
+        N and Row were simply for testing purposes and can be ignored.
+
+    Outputs:
+
+        voigt_val: force vector exerted on point_One to point_Two
+
+        voigt_val_opp: force vector that is equivalent in magnitude to
+                        voigt_val but opposite in direction
 %}

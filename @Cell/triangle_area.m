@@ -8,3 +8,15 @@ p3 = [p3.Position 0];
 tri_area = cross((p2 - p1),(p3 - p1)) * 2;
 
 end
+
+%{
+    Calculates the area between 3 points.
+    
+    Inputs:
+
+        p1: Can either a Cell, MemPoint, or NucPoint
+
+        p2: Can either a Cell, MemPoint, or NucPoint
+
+        p3: Can either a Cell, MemPoint, or NucPoint
+%}

@@ -44,8 +44,5 @@ end
 
     Outputs:
 
-        voigt_val: force vector exerted on point_One to point_Two
-
-        voigt_val_opp: force vector that is equivalent in magnitude to
-                        voigt_val but opposite in direction
+        voigt_val: force vector exer
 %}

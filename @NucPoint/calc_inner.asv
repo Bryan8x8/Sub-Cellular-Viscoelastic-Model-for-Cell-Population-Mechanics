@@ -71,19 +71,19 @@ end
 
         B_mmem: Membrane adjacent neighbor dampening constat
  
-        B_nmem: Nucleus adjacent neighbor dampening constant
+        B_nmem:
  
-        cellMem_l: Membrane adjacent neighbor spring rest length
+        cellMem_l:
  
-        nucMem_l: Nucleus adjacent neighbor spring rest length
+        nucMem_l:
  
-        cyt_l: Cytoskeleton spring rest length
+        cyt_l:
  
-        nucOpp_l: Nucleus Cytoskeleton spring rest length
+        nucOpp_l:
  
-        inner_pressure: pressure within cell
+        inner_pressure:
  
-        enviro_pressure: environmental pressure
+        enviro_pressure:
  
         N: Used for testing purposes, can be filled by any integer value.
 

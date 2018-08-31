@@ -55,22 +55,7 @@ end
     This is a Cell function.
 
     The purpose of this function is to read the force value written into
-    all the children nodes of the cell calling this function and applying
-    that force to each node over a predetermined amount of time. It will
-    adjust each node's position and velocity vectors.
-
-    Inputs:
-
-        time_dilation: determines how long the force will be applied to the
-                        cell until another force calculation cycle is necessary.
-
-                        Important: a lower time_dilation will allow for
-                        more accurate results but higher run times, while a
-                        high time_dilation will result in the opposite
-
-    Outputs:
-
-        None.
+    all 
 
 
 %}
