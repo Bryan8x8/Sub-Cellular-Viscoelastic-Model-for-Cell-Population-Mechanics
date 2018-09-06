@@ -299,6 +299,55 @@ PROJECT LOG:
 			
 		Again, the paper is vague in its descriptions and leaves out how mitosis forces acting on the cell are calculated and omits important variable numbers. I now need to determine how to best calculate the forces acting on a cell to simulate mitosis and at what point the seperation forces nodes to break from their neighbors and form their own independent cells.
 
+		Also some assmptions the paper make about growth don't seem to line up with what should actually occur in reality...
+
 	Progress:
 
 		- Mitsosis Axis selection function complete
+
+9/2/2018
+
+	Tasks:
+
+		- Finish Mitosis
+		- Add render storage and deletion capabilities
+
+	Notes/Challenges:
+
+		After running some tests with the Mitosis Axis selection I began to run the program at larger iterations, as it turns out there was an error in how rest volume was calculated and it resulted in cell growth occuring too quickly and throwing it out of balance. A quick change was made to the rest vol calculation in cell_growth and cell growth has become even more stable. things are looking good!
+
+		As iteration increase the selected axis become increasinly balanced out in terms of volume, this should result in a very predictable mitosis behavior!
+
+
+9/3/2018
+
+	Tasks:
+
+		- Determine how to calculate mitosis forces
+
+	Notes/Challenges:
+
+		For now I do not know how to create forces that will accurately mimic true cell behaviour, for now I will create a substitute that will mimic what the model was attemping to depict. I will do this by creating forces that are equivalent to cell death spring rest length contractions on the membrane points designated to experience mitotic forces. For the membrane points I will create forces intended to mimic cell growth that instead point orthgonally in relation to the mitosis division axis.
+
+		I will create this all in such as way that it will be easy to implement new mitotic forces once a better calculation is derived but this placehold should allow me to at leatst complete the remaining required functions for mitosis and properly test it
+
+
+	Progress:
+
+		- Mitotic forces in place for membrane points, results seem promising
+
+9/5/2018
+
+	Tasks:
+
+		- Apply mitotic forces to nucleus points
+
+	Notes/Challenges:
+
+		- I think I know why the nucleus is warping. What I ended up doing with this cell is treating the axis as none static, it depends on the direction of the mitotic forces acting on the membrane cells. The membrane cell forces are produced by simiulating cell death and having a force applied to them that assumes the spring rest length is getting smaller. From these forces the orthogonal force is produced, this orthogonal force is dynamic and responds to the changes in the f_con. this might produce a feedback look that causes the nucleus to spiral and warp.
+
+		- I will attempt to solve these issues using static axis instead which should produce a more balanced cell division process. 
+
+	Progress:
+
+		- Force implemented, but direction seems to be incorrect, nucleus is being warpped.
