@@ -348,6 +348,8 @@ PROJECT LOG:
 
 		- I will attempt to solve these issues using static axis instead which should produce a more balanced cell division process. 
 
+		- Another issue might be that the cell during mitosis a cell's spring rest lengths still encourage expansion. It's unlikely that this is an issue but if the above solution does not work this might be worth looking into.
+
 	Progress:
 
 		- Force implemented, but direction seems to be incorrect, nucleus is being warpped.
