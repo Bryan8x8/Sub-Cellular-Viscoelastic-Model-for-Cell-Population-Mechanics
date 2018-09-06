@@ -1,0 +1,6 @@
+function calc_mitosis(obj, K_ncyst, B_ncyst, obj.mitosis_nuc_l)
+    [voigt_val, voigt_val_opp] = calc_voigt(obj, obj.ONN_One,B_ncyst, K_ncyst, mitosis_nuc_l, 1, 1);
+    voigt_mag = (voigt_val(1,1)^2 + voigt_val(1,2)^2)^(1/2);
+    mitosis_force = voigt_mag * obj.ParentCell.mitosis_nuc_force_vector;
+    obj.force = obj.force + 
+end

@@ -11,4 +11,4 @@ end
 %{
     Uses triangle_area(), N amount of times to calculate the size of the
     selected Cell.
-}%
+%}

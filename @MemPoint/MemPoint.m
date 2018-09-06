@@ -8,7 +8,8 @@ classdef MemPoint < handle
       force = [0,0];
       
       %Mitosis
-      axis_flag = 0;
+      Mitosis_Group = 0;
+      
       
       ParentCell;
       
@@ -30,6 +31,7 @@ classdef MemPoint < handle
       end
       
       calc_inner(obj, K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem, B_nmem, cellMem_l, nucMem_l, cyt_l, nucOpp_l, inner_pressure, enviro_pressure, N, row)
+      calc_mitosis(obj, K_cyst, B_cyst, mitosis_mem_l)
       
    end
 end

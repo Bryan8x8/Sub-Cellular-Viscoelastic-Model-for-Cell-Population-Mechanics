@@ -26,7 +26,7 @@ function grow_alt(obj)
     %added 
     grow_pos = randi([1,obj.NodeCount],1);
     
-    obj.Rest_Vol = obj.Rest_Vol * ((obj.NodeCount + 1)/obj.NodeCount);
+    obj.Rest_Vol = obj.Rest_Vol * ((obj.NodeCount + 1)/obj.NodeCount)^2;
     %determining new circumference lengths, and from those new radius
     %lengths. It's important to note that recalc radius won't increment the
     %nodecount and that it must be done after the recalculation occures

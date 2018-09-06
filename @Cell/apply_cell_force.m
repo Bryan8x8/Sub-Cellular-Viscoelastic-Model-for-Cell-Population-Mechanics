@@ -44,8 +44,8 @@ function apply_cell_force(obj, time_dilation)
        %we have ended the application of force, we will now reset the force
        %on each node
        
-       %obj.MembranePoints{i,1}.force = [0,0];
-       %obj.NucleusPoints{i,1}.force = [0,0];
+       obj.MembranePoints{i,1}.force = [0,0];
+       obj.NucleusPoints{i,1}.force = [0,0];
        
     end
 

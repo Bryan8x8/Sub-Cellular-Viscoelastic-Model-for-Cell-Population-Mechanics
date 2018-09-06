@@ -36,7 +36,7 @@ function calc_inner(obj, K_cyst, K_ncyt, K_mmem, K_nmem, B_cyst, B_ncyt, B_mmem,
             
         end
        %}
-       obj.force = (-1)*(voigt_valOne + voigt_valTwo + voigt_valThree + cyto_f_val);
+       obj.force = obj.force + (voigt_valOne + voigt_valTwo + voigt_valThree + cyto_f_val);
        
 end
 

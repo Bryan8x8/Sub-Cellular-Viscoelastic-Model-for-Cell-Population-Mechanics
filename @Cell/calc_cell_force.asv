@@ -28,12 +28,7 @@ function calc_cell_force(obj)
     inner_pressure = obj.inner_pressure;
     external_pressure = obj.external_pressure;
     
-    %Setting appropriate values for mitosis force calculation if necessary
-    if obj.Mitosis_Flag == 1
-        mitosis_mem_l = obj.mitosis_mem_l * (N/(N+1000));
-        mitosis_nuc_l = obj.mitosis_nuc_l * ((N+1)/N);
-        obj.find_div_axis();
-    end
+    
 
     for i=1:obj.NodeCount
         
@@ -55,23 +50,21 @@ function calc_cell_force(obj)
         
         %CALCULATING MITOSIS FORCE
         
-            
-            %obj.mitosis_div_axis_points(1,1)
-            %obj.MembranePoints{obj.mitosis_div_axis_points(1,1),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
-            %obj.MembranePoints{obj.mitosis_div_axis_points(1,2),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
-            %obj.MembranePoints{obj.mitosis_div_axis_points(1,3),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
-            %obj.MembranePoints{obj.mitosis_div_axis_points(1,4),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
+            obj.mitosis_mem_l = obj.mitosis_mem_l * (N/(N+1));
+            obj.mitosis_nuc_l = obj.mitosis_nuc_l * (N/(N+1));
+           
+
             
             if obj.Mitosis_Flag == 1
-                
                 %Mistosis Forces only act on a select few membrane points
-                if obj.MembranePoints{i,1}.Mitosis_Group ~= 0
-                    obj.MembranePoints{i,1}.calc_mitosis(K_cyst, B_cyst, mitosis_mem_l);
-                end
+                obj.MembranePoints{obj.mitosis_div_axis_points(1,1),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
+                obj.MembranePoints{obj.mitosis_div_axis_points(1,2),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
+                obj.MembranePoints{obj.mitosis_div_axis_points(1,3),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
+                obj.MembranePoints{obj.mitosis_div_axis_points(1,4),1}.calc_mitosis(K_cyst, B_cyst, obj.mitosis_mem_l);
                 %Nucleus Forces act on all points. There directions is the
                 %midpoint between the orthogonal vectors of the membrane
                 %mitotic forces.
-                obj.NucleusPoints{i,1}.calc_mitosis(K_ncyt, B_ncyt, mitosis_nuc_l);
+                obj.NucleusPoints{i,1};
             end
         
     end

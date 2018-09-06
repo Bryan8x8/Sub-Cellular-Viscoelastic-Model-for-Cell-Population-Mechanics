@@ -1,0 +1,15 @@
+function rotated_vector = rotate_vec(init_vec, degree)
+    %assumes vector origin is 0,0
+    %first we must determine what quadrant the vector lies in. 
+    
+    if init_vec(1,1) > 0 && init_vec(1,2) > 0
+        
+    elseif init_vec(1,1) < 0 && init_vec(1,2) > 0
+        
+    elseif init_vec(1,1) > 0 && init_vec(1,2) > 0
+        
+    elseif init_vec(1,1) > 0 && init_vec(1,2) > 0
+        
+    end
+    
+end
